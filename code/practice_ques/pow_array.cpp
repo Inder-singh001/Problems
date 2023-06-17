@@ -15,14 +15,32 @@ int count_bits(int num)
     return count;
 }
 
+void power_array(int arr[], int size)
+{
+    int n, num;
+
+    for(int i=0; i<size ; i++)
+    {
+        n = arr[i];
+        num=count_bits(n);
+
+        while(num==1)
+        {
+            cout<<n<<" "; 
+            break;
+        }
+    }
+}
 
 int main()
 {
     int arr[100];
     int size;
-    cin>>size;
-    int n,num1;
 
+    cout<<"Size of array: ";
+    cin>>size;
+
+    cout<<"The Array: ";
     for(int i=0; i<size ; i++)
     {
         cin>>arr[i];
@@ -30,17 +48,7 @@ int main()
 
     cout<<"Power of 2 elements in array: ";
 
-    for(int i=0; i<size ; i++)
-    {
-        n = arr[i];
-        num1=count_bits(n);
-
-        while(num1==1)
-        {
-            cout<<n<<" "; 
-            break;
-        }
-    }
+    power_array(arr, size);
 
     return 0;
 }
